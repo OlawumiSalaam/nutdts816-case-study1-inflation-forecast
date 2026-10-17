@@ -1,0 +1,30 @@
+nigeria_cpi_2026_supplement.csv: REAL. Nigeria all-items (composite) CPI, Jan 2026 - Sep 2026 (9 months), 2024=100 basis.
+Supplement to the course file nigeria_cpi.csv (Jan 2014 - Dec 2025), which is left unchanged. Append these rows to it.
+
+SOURCE
+  Publisher : National Bureau of Statistics (NBS), Nigeria
+  Release   : September 2026 CPI, published 15 Oct 2026
+  Catalogue : https://microdata.nigerianstat.gov.ng/index.php/catalog/154/related-materials
+  Download  : https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1440  (CPI_SEPTEMBER_2026.zip)
+  Workbook  : cpi_1New_September2026.xlsx, sheet "Table1" ("Composite Consumer Price Index (Base: 2024 = 100)"),
+              All Items Index columns: Monthly (index), Month-on change (%), Year-on change (%)
+  Report    : CPI_SEPTEMBER_2026.pdf (same zip). Methodology (p.3): price reference period 2024, weight reference
+              period 2023, 242 COICOP-2018 item strata, 74 urban/rural state strata. Headline (p.6): 14.63% y/y Sep 2026.
+  Extracted : 17 Oct 2026
+
+COLUMNS
+  date        first day of the month
+  cpi         all-items index, rounded to 4 dp (same convention as nigeria_cpi.csv)
+  nbs_mom_pct NBS-published month-on-month change (%), rounded to 4 dp. Kept for validation only.
+  nbs_yoy_pct NBS-published year-on-year change (%), rounded to 4 dp. Kept for validation only.
+
+CONSISTENCY WITH nigeria_cpi.csv
+  Table1 covers Jan 1995 - Sep 2026. For all 144 overlapping months (Jan 2014 - Dec 2025) it matches nigeria_cpi.csv
+  to within 0.0002%, i.e. it is the same spliced 2024=100 series; no history was revised. Joining point: Dec 2025 =
+  131.1666 in both. The published Jan 2026 m/m (-2.8792%) and every 2026 y/y rate in this file can be reproduced from
+  nigeria_cpi.csv + this file, which checks the join.
+
+KNOWN FEATURES
+  Jan 2026 m/m is -2.88%, almost the same as the Jan 2025 rebasing step (-2.835%); Mar 2026 is +4.18% (Mar 2025:
+  +3.90%). The NBS report gives no explanation. Two observations cannot settle whether this is a recurring
+  January pattern in the new basket or a coincidence; treat it as an open question, not an established fact.
